@@ -73,9 +73,9 @@ close FASTA;
 my $seq_len = length($seq);
 print "Sequence was loaded into memory\nCalculating GC, ATGC and N content\n";
 #GC content calculation
-my $gc_content = `grep -v ">" ../cbeijerinckii/cbeijerinckii1.fasta | grep -E "G|C" -o | wc -l`;
+my $gc_content = `grep -v ">" $input | grep -E "G|C" -o | wc -l`;
 chomp $gc_content;
-my $atcg_content = `grep -v ">" ../cbeijerinckii/cbeijerinckii1.fasta | grep -E "A|T|G|C" -o | wc -l`;
+my $atcg_content = `grep -v ">" $input | grep -E "A|T|G|C" -o | wc -l`;
 chomp $atcg_content;
 #Búsqueda de patrones
 if($mtf_file ne '')
